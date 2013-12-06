@@ -14,7 +14,7 @@
 
 @implementation FirstViewController
 
-- (void)fetchAndParseDatafrom:(NSString*)urlString {
+- (void)fetchAndParseDataFrom:(NSString*)urlString {
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *rawData = [NSData dataWithContentsOfURL:url];
