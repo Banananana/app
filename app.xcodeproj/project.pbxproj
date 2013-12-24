@@ -23,6 +23,7 @@
 		254E2D82184B398A004838E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E2D5E184B398A004838E5 /* UIKit.framework */; };
 		254E2D8A184B398A004838E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D88184B398A004838E5 /* InfoPlist.strings */; };
 		254E2D8C184B398A004838E5 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D8B184B398A004838E5 /* appTests.m */; };
+		25A9C0961869B0A3008B534A /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* Timeline.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		254E2D87184B398A004838E5 /* appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "appTests-Info.plist"; sourceTree = "<group>"; };
 		254E2D89184B398A004838E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		254E2D8B184B398A004838E5 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
+		25A9C0941869B0A3008B534A /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		25A9C0951869B0A3008B534A /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				254E2D69184B398A004838E5 /* AppDelegate.h */,
 				254E2D6A184B398A004838E5 /* AppDelegate.m */,
 				254E2D6C184B398A004838E5 /* Main_iPhone.storyboard */,
+				25A9C0941869B0A3008B534A /* Timeline.h */,
+				25A9C0951869B0A3008B534A /* Timeline.m */,
 				254E2D6F184B398A004838E5 /* Main_iPad.storyboard */,
 				254E2D72184B398A004838E5 /* FirstViewController.h */,
 				254E2D73184B398A004838E5 /* FirstViewController.m */,
@@ -260,6 +265,7 @@
 			files = (
 				254E2D77184B398A004838E5 /* SecondViewController.m in Sources */,
 				254E2D6B184B398A004838E5 /* AppDelegate.m in Sources */,
+				25A9C0961869B0A3008B534A /* Timeline.m in Sources */,
 				254E2D74184B398A004838E5 /* FirstViewController.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,
 			);
@@ -480,6 +486,7 @@
 				254E2D91184B398A004838E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		254E2D92184B398A004838E5 /* Build configuration list for PBXNativeTarget "appTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				254E2D94184B398A004838E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
