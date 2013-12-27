@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface Timeline : UITableViewController
+@interface Timeline : UITableViewController {
+    NSArray *data;
+}
+
+-(void) fetchAndParseDataFrom: (NSString*) urlString;
+
 
 @end

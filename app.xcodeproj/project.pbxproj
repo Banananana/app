@@ -24,6 +24,8 @@
 		254E2D8A184B398A004838E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D88184B398A004838E5 /* InfoPlist.strings */; };
 		254E2D8C184B398A004838E5 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D8B184B398A004838E5 /* appTests.m */; };
 		25A9C0961869B0A3008B534A /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* Timeline.m */; };
+		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
+		25A9C09B1869B3D6008B534A /* cell.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* cell.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		254E2D8B184B398A004838E5 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		25A9C0941869B0A3008B534A /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
 		25A9C0951869B0A3008B534A /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		25A9C0971869B36D008B534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		25A9C09A1869B3D6008B534A /* cell.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cell.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */,
 				254E2D5D184B398A004838E5 /* CoreGraphics.framework in Frameworks */,
 				254E2D5F184B398A004838E5 /* UIKit.framework in Frameworks */,
 				254E2D5B184B398A004838E5 /* Foundation.framework in Frameworks */,
@@ -109,6 +114,7 @@
 		254E2D59184B398A004838E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25A9C0971869B36D008B534A /* CoreData.framework */,
 				254E2D5A184B398A004838E5 /* Foundation.framework */,
 				254E2D5C184B398A004838E5 /* CoreGraphics.framework */,
 				254E2D5E184B398A004838E5 /* UIKit.framework */,
@@ -120,6 +126,7 @@
 		254E2D60184B398A004838E5 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				25A9C0991869B3D6008B534A /* cell.xcdatamodeld */,
 				254E2D69184B398A004838E5 /* AppDelegate.h */,
 				254E2D6A184B398A004838E5 /* AppDelegate.m */,
 				254E2D6C184B398A004838E5 /* Main_iPhone.storyboard */,
@@ -268,6 +275,7 @@
 				25A9C0961869B0A3008B534A /* Timeline.m in Sources */,
 				254E2D74184B398A004838E5 /* FirstViewController.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,
+				25A9C09B1869B3D6008B534A /* cell.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		25A9C0991869B3D6008B534A /* cell.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				25A9C09A1869B3D6008B534A /* cell.xcdatamodel */,
+			);
+			currentVersion = 25A9C09A1869B3D6008B534A /* cell.xcdatamodel */;
+			path = cell.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 254E2D4F184B398A004838E5 /* Project object */;
 }

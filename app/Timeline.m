@@ -28,7 +28,13 @@
     [super viewDidLoad];
     
     NSLog(@"hello");
+    [self fetchAndParseDataFrom:@"https://api.github.com/users/banacorn/gists"];
+    NSLog(@"ggg %@", data[0][@"description"]);
+    
+    
 
+    // NSLog(@"%@", data);
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -42,6 +48,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)fetchAndParseDataFrom:(NSString*)urlString {
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *rawData = [NSData dataWithContentsOfURL:url];
+    NSString *ret = [[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding];
+    NSData* fetched = [ret dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:fetched
+                 options:0
+                 error:&error];
+    
+    if(error) {
+        NSLog(@"JSON malformed");
+    }
+    
+    if([object isKindOfClass:[NSDictionary class]])
+    {
+        NSLog(@"JSON: Object");
+    }
+    else if([object isKindOfClass:[NSArray class]])
+    {
+        data = object;
+    }
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -54,7 +89,8 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    
+    return [data count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
