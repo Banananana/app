@@ -35,8 +35,13 @@
     // fix some shit
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
-
-    // NSLog(@"%@", data);
+    // init test
+    
+    
+    
+    
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
