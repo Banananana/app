@@ -15,6 +15,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Magical Record shit
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+
     // Override point for customization after application launch.
     return YES;
 }
