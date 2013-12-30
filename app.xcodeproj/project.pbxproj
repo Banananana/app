@@ -25,7 +25,7 @@
 		254E2D8C184B398A004838E5 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D8B184B398A004838E5 /* appTests.m */; };
 		25A9C0961869B0A3008B534A /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* Timeline.m */; };
 		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
-		25A9C09B1869B3D6008B534A /* cell.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* cell.xcdatamodeld */; };
+		25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* app.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		25A9C0941869B0A3008B534A /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
 		25A9C0951869B0A3008B534A /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 		25A9C0971869B36D008B534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		25A9C09A1869B3D6008B534A /* cell.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cell.xcdatamodel; sourceTree = "<group>"; };
+		25A9C09A1869B3D6008B534A /* app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = app.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,13 +126,13 @@
 		254E2D60184B398A004838E5 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				25A9C0991869B3D6008B534A /* cell.xcdatamodeld */,
+				25A9C0991869B3D6008B534A /* app.xcdatamodeld */,
 				254E2D69184B398A004838E5 /* AppDelegate.h */,
 				254E2D6A184B398A004838E5 /* AppDelegate.m */,
 				254E2D6C184B398A004838E5 /* Main_iPhone.storyboard */,
+				254E2D6F184B398A004838E5 /* Main_iPad.storyboard */,
 				25A9C0941869B0A3008B534A /* Timeline.h */,
 				25A9C0951869B0A3008B534A /* Timeline.m */,
-				254E2D6F184B398A004838E5 /* Main_iPad.storyboard */,
 				254E2D72184B398A004838E5 /* FirstViewController.h */,
 				254E2D73184B398A004838E5 /* FirstViewController.m */,
 				254E2D75184B398A004838E5 /* SecondViewController.h */,
@@ -275,7 +275,7 @@
 				25A9C0961869B0A3008B534A /* Timeline.m in Sources */,
 				254E2D74184B398A004838E5 /* FirstViewController.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,
-				25A9C09B1869B3D6008B534A /* cell.xcdatamodeld in Sources */,
+				25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,13 +508,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		25A9C0991869B3D6008B534A /* cell.xcdatamodeld */ = {
+		25A9C0991869B3D6008B534A /* app.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				25A9C09A1869B3D6008B534A /* cell.xcdatamodel */,
+				25A9C09A1869B3D6008B534A /* app.xcdatamodel */,
 			);
-			currentVersion = 25A9C09A1869B3D6008B534A /* cell.xcdatamodel */;
-			path = cell.xcdatamodeld;
+			currentVersion = 25A9C09A1869B3D6008B534A /* app.xcdatamodel */;
+			path = app.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

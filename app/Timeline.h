@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface Timeline : UITableViewController {
+@interface Timeline : UITableViewController <NSFetchedResultsControllerDelegate> {
     NSArray *data;
 }
 

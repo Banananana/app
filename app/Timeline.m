@@ -27,12 +27,12 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"hello");
     [self fetchAndParseDataFrom:@"https://api.github.com/users/banacorn/gists"];
     // [self fetchAndParseDataFrom:@"http://localhost:3000"];
     // [self fetchAndParseDataFrom:@"https://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
     // NSLog(@"data %@", data);
-    
+
+    // fix some shit
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
 
@@ -110,7 +110,7 @@
 {
 //    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
 //    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
-    cell.textLabel.text = [NSString stringWithFormat:@"fuck %@"];
+    cell.textLabel.text = [NSString stringWithFormat:@"fuck"];
 }
 
 /*
