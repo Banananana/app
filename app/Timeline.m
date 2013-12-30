@@ -29,9 +29,12 @@
     
     NSLog(@"hello");
     [self fetchAndParseDataFrom:@"https://api.github.com/users/banacorn/gists"];
-    NSLog(@"ggg %@", data[0][@"description"]);
+    // [self fetchAndParseDataFrom:@"http://localhost:3000"];
+    // [self fetchAndParseDataFrom:@"https://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
+    // NSLog(@"data %@", data);
     
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+
 
     // NSLog(@"%@", data);
     
@@ -52,13 +55,13 @@
 - (void)fetchAndParseDataFrom:(NSString*)urlString {
     
     NSURL *url = [NSURL URLWithString:urlString];
-    NSData *rawData = [NSData dataWithContentsOfURL:url];
-    NSString *ret = [[NSString alloc] initWithData:rawData encoding:NSUTF8StringEncoding];
+    NSData *someShit = [NSData dataWithContentsOfURL:url];
+    NSString *ret = [[NSString alloc] initWithData:someShit encoding:NSUTF8StringEncoding];
     NSData* fetched = [ret dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     
     id object = [NSJSONSerialization
-                 JSONObjectWithData:fetched
+                 JSONObjectWithData: fetched
                  options:0
                  error:&error];
     
@@ -87,7 +90,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     
     return [data count];
@@ -99,8 +101,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+//    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+//    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    cell.textLabel.text = [NSString stringWithFormat:@"fuck %@"];
 }
 
 /*
