@@ -7,6 +7,7 @@
 //
 
 #import "Timeline.h"
+#import "News.h"
 
 @interface Timeline ()
 
@@ -27,7 +28,10 @@
 {
     [super viewDidLoad];
     
-    [self fetchAndParseDataFrom:@"https://api.github.com/users/banacorn/gists"];
+    self.title = @"screw you";
+    
+    
+    [self fetchNews:@"https://api.github.com/users/banacorn/gists"];
     // [self fetchAndParseDataFrom:@"http://localhost:3000"];
     // [self fetchAndParseDataFrom:@"https://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
     // NSLog(@"data %@", data);
@@ -36,10 +40,6 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
     // init test
-    
-    
-    
-    
     
     
     
@@ -57,7 +57,7 @@
 }
 
 
-- (void)fetchAndParseDataFrom:(NSString*)urlString {
+- (void)fetchNews:(NSString*)urlString {
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *someShit = [NSData dataWithContentsOfURL:url];
@@ -80,7 +80,35 @@
     }
     else if([object isKindOfClass:[NSArray class]])
     {
-        data = object;
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+
+        NSArray *allOldNews = [News MR_findAll];
+        
+        // add news if not already in core data
+        for (NSDictionary * dict in object) {
+            
+            NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
+            
+            BOOL existed = false;
+            
+            for (News * news in allOldNews) {
+                    
+                NSNumber * oldID = news.id;
+                
+                if ([newID isEqualToNumber:oldID]) {
+                    existed = true;
+                }
+            }
+            
+            if (!existed) {
+                News *news = [News MR_createEntity];
+                news.id = newID;
+                news.createdAt = [dict objectForKey:@"created_at"];
+            }
+        }
+
+        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
 
@@ -96,8 +124,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    
-    return [data count];
+    NSLog(@"count %d", [[News MR_findAll] count]);
+    return [[News MR_findAll] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -115,7 +143,11 @@
 {
 //    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
 //    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
-    cell.textLabel.text = [NSString stringWithFormat:@"fuck"];
+    
+    News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
+    NSLog(@"news %@", news);
+    
+    cell.textLabel.text = [NSString stringWithFormat:[news.id stringValue]];
 }
 
 /*

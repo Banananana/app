@@ -10,10 +10,10 @@
 #import <CoreData/CoreData.h>
 
 @interface Timeline : UITableViewController <NSFetchedResultsControllerDelegate> {
-    NSArray *data;
+    NSArray *data, *news;
 }
 
--(void) fetchAndParseDataFrom: (NSString*) urlString;
+-(void) fetchNews: (NSString*) urlString;
 
 
 
