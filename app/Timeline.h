@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface Timeline : UITableViewController <NSFetchedResultsControllerDelegate> {
-    NSArray *data, *news;
-}
+@interface Timeline : UITableViewController <NSFetchedResultsControllerDelegate> {}
 
 -(void) fetchNews: (NSString*) urlString;
 
