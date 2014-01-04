@@ -31,11 +31,9 @@
     self.title = @"screw you";
     
     
-    [self fetchNews:@"https://api.github.com/users/banacorn/gists"];
-    // [self fetchAndParseDataFrom:@"http://localhost:3000"];
-    // [self fetchAndParseDataFrom:@"https://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
-    // NSLog(@"data %@", data);
-
+    // [self fetchNews:@"https://api.github.com/users/banacorn/gists"];
+    [self fetchNews:@"http://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
+    
     // fix some shit
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
@@ -107,6 +105,31 @@
                 news.createdAt = [dict objectForKey:@"created_at"];
             }
         }
+        
+        // remove news if redundent in core data
+        for (News * news in allOldNews) {
+            
+            NSNumber * oldID = news.id;
+            
+            
+            BOOL redundent = true;
+            
+            for (NSDictionary * dict in object) {
+                
+                NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
+                
+                if ([newID isEqualToNumber:oldID]) {
+                    redundent = false;
+                }
+            }
+            
+            if (redundent) {
+                [news MR_deleteEntity];
+            }
+        }
+        
+        
+        
 
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
