@@ -15,8 +15,6 @@
 		254E2D6B184B398A004838E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D6A184B398A004838E5 /* AppDelegate.m */; };
 		254E2D6E184B398A004838E5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D6C184B398A004838E5 /* Main_iPhone.storyboard */; };
 		254E2D71184B398A004838E5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D6F184B398A004838E5 /* Main_iPad.storyboard */; };
-		254E2D74184B398A004838E5 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D73184B398A004838E5 /* FirstViewController.m */; };
-		254E2D77184B398A004838E5 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D76184B398A004838E5 /* SecondViewController.m */; };
 		254E2D79184B398A004838E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D78184B398A004838E5 /* Images.xcassets */; };
 		254E2D80184B398A004838E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E2D7F184B398A004838E5 /* XCTest.framework */; };
 		254E2D81184B398A004838E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E2D5A184B398A004838E5 /* Foundation.framework */; };
@@ -53,10 +51,6 @@
 		254E2D6A184B398A004838E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		254E2D6D184B398A004838E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		254E2D70184B398A004838E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		254E2D72184B398A004838E5 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		254E2D73184B398A004838E5 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		254E2D75184B398A004838E5 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		254E2D76184B398A004838E5 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		254E2D78184B398A004838E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		254E2D7E184B398A004838E5 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		254E2D7F184B398A004838E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -146,10 +140,6 @@
 				25A9C0951869B0A3008B534A /* Timeline.m */,
 				256A72F9187208DC00CD90AE /* News.h */,
 				256A72FA187208DC00CD90AE /* News.m */,
-				254E2D72184B398A004838E5 /* FirstViewController.h */,
-				254E2D73184B398A004838E5 /* FirstViewController.m */,
-				254E2D75184B398A004838E5 /* SecondViewController.h */,
-				254E2D76184B398A004838E5 /* SecondViewController.m */,
 				254E2D78184B398A004838E5 /* Images.xcassets */,
 				254E2D61184B398A004838E5 /* Supporting Files */,
 			);
@@ -318,11 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254E2D77184B398A004838E5 /* SecondViewController.m in Sources */,
 				256A72FB187208DC00CD90AE /* News.m in Sources */,
 				254E2D6B184B398A004838E5 /* AppDelegate.m in Sources */,
 				25A9C0961869B0A3008B534A /* Timeline.m in Sources */,
-				254E2D74184B398A004838E5 /* FirstViewController.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,
 				25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */,
 			);
