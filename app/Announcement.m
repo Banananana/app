@@ -1,14 +1,14 @@
 //
-//  News.m
+//  Announcement.m
 //  app
 //
 //  Created by blitz on 2013/12/31.
 //  Copyright (c) 2013年 blitz. All rights reserved.
 //
 
-#import "News.h"
+#import "Announcement.h"
 
-@implementation News
+@implementation Announcement
 
 @dynamic id;
 @dynamic title;

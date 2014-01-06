@@ -21,7 +21,7 @@
 		254E2D82184B398A004838E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254E2D5E184B398A004838E5 /* UIKit.framework */; };
 		254E2D8A184B398A004838E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D88184B398A004838E5 /* InfoPlist.strings */; };
 		254E2D8C184B398A004838E5 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D8B184B398A004838E5 /* appTests.m */; };
-		256A72FB187208DC00CD90AE /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 256A72FA187208DC00CD90AE /* News.m */; };
+		256A72FB187208DC00CD90AE /* Announcement.m in Sources */ = {isa = PBXBuildFile; fileRef = 256A72FA187208DC00CD90AE /* Announcement.m */; };
 		25A9C0961869B0A3008B534A /* TimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* TimelineView.m */; };
 		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
 		25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* app.xcdatamodeld */; };
@@ -57,8 +57,8 @@
 		254E2D87184B398A004838E5 /* appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "appTests-Info.plist"; sourceTree = "<group>"; };
 		254E2D89184B398A004838E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		254E2D8B184B398A004838E5 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
-		256A72F9187208DC00CD90AE /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
-		256A72FA187208DC00CD90AE /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		256A72F9187208DC00CD90AE /* Announcement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcement.h; sourceTree = "<group>"; };
+		256A72FA187208DC00CD90AE /* Announcement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Announcement.m; sourceTree = "<group>"; };
 		25A9C0941869B0A3008B534A /* TimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineView.h; sourceTree = "<group>"; };
 		25A9C0951869B0A3008B534A /* TimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineView.m; sourceTree = "<group>"; };
 		25A9C0971869B36D008B534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -138,8 +138,8 @@
 				254E2D6F184B398A004838E5 /* Main_iPad.storyboard */,
 				25A9C0941869B0A3008B534A /* TimelineView.h */,
 				25A9C0951869B0A3008B534A /* TimelineView.m */,
-				256A72F9187208DC00CD90AE /* News.h */,
-				256A72FA187208DC00CD90AE /* News.m */,
+				256A72F9187208DC00CD90AE /* Announcement.h */,
+				256A72FA187208DC00CD90AE /* Announcement.m */,
 				254E2D78184B398A004838E5 /* Images.xcassets */,
 				254E2D61184B398A004838E5 /* Supporting Files */,
 			);
@@ -308,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				256A72FB187208DC00CD90AE /* News.m in Sources */,
+				256A72FB187208DC00CD90AE /* Announcement.m in Sources */,
 				254E2D6B184B398A004838E5 /* AppDelegate.m in Sources */,
 				25A9C0961869B0A3008B534A /* TimelineView.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,

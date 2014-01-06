@@ -7,7 +7,7 @@
 //
 
 #import "TimelineView.h"
-#import "News.h"
+#import "Announcement.h"
 
 @interface TimelineView ()
 
@@ -30,9 +30,7 @@
     
     self.title = @"screw you";
     
-    
-    // [self fetchNews:@"https://api.github.com/users/banacorn/gists"];
-    [self fetchNews:@"http://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
+    [self fetchAnnouncement:@"http://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
     
     // fix some shit
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
@@ -55,7 +53,7 @@
 }
 
 
-- (void)fetchNews:(NSString*)urlString {
+- (void)fetchAnnouncement:(NSString*)urlString {
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *someShit = [NSData dataWithContentsOfURL:url];
@@ -84,18 +82,18 @@
         //[News MR_truncateAll];
         
         
-        NSArray *allOldNews = [News MR_findAll];
+        NSArray *allOldAnnouncement = [Announcement MR_findAll];
         
-        // add news if not already in core data
+        // add announcement if not already in core data
         for (NSDictionary * dict in object) {
             
             NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
             
             BOOL existed = false;
             
-            for (News * news in allOldNews) {
+            for (Announcement * announcement in allOldAnnouncement) {
                 
-                NSNumber * oldID = news.id;
+                NSNumber * oldID = announcement.id;
                 
                 if ([newID isEqualToNumber:oldID]) {
                     existed = true;
@@ -105,21 +103,21 @@
             
             if (!existed) {
                 
-                News *news = [News MR_createEntity];
+                Announcement * announcement = [Announcement MR_createEntity];
                 
-                news.id = newID;
-                news.title = [dict objectForKey:@"title"];
-                news.content = [dict objectForKey:@"content"];
-                news.authorID = [dict objectForKey:@"author_id"];
-                news.createdAt = [dict objectForKey:@"created_at"];
-                news.updatedAt = [dict objectForKey:@"updated_at"];
+                announcement.id = newID;
+                announcement.title = [dict objectForKey:@"title"];
+                announcement.content = [dict objectForKey:@"content"];
+                announcement.authorID = [dict objectForKey:@"author_id"];
+                announcement.createdAt = [dict objectForKey:@"created_at"];
+                announcement.updatedAt = [dict objectForKey:@"updated_at"];
             }
         }
         
-        // remove news if redundent in core data
-        for (News * news in allOldNews) {
+        // remove announcements if redundent in core data
+        for (Announcement * announcement in allOldAnnouncement) {
             
-            NSNumber * oldID = news.id;
+            NSNumber * oldID = announcement.id;
             
             
             BOOL redundent = true;
@@ -134,7 +132,7 @@
             }
             
             if (redundent) {
-                [news MR_deleteEntity];
+                [announcement MR_deleteEntity];
             }
         }
         
@@ -157,8 +155,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-//    NSLog(@"count %d", [[News MR_findAll] count]);
-    return [[News MR_findAll] count];
+    return [[Announcement MR_findAll] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -174,10 +171,9 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
-    //NSLog(@"title %@", news.title);
-    cell.textLabel.text = news.title;
-    cell.detailTextLabel.text = news.authorID;
+    Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
+    cell.textLabel.text = announcement.title;
+    cell.detailTextLabel.text = announcement.authorID;
 }
 
 /*
@@ -222,8 +218,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
-    NSLog(@"%@", news.content);
+    Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
+    NSLog(@"%@", announcement.content);
 //    [self performSegueWithIdentifier:@"showNewsDetail"];
 }
 

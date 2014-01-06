@@ -1,5 +1,5 @@
 //
-//  News.h
+//  Announcement.h
 //  app
 //
 //  Created by blitz on 2013/12/31.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface News : NSManagedObject
+@interface Announcement : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * title;

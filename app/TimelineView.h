@@ -11,7 +11,7 @@
 
 @interface TimelineView : UITableViewController <NSFetchedResultsControllerDelegate> {}
 
--(void) fetchNews: (NSString*) urlString;
+-(void) fetchAnnouncement: (NSString*) urlString;
 
 
 

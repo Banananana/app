@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="News">
+    <entity name="Announcement">
         <attribute name="authorID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,6 +12,6 @@
         <userInfo/>
     </entity>
     <elements>
-        <element name="News" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Announcement" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
