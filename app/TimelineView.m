@@ -7,6 +7,7 @@
 //
 
 #import "TimelineView.h"
+#import "AnnouncementDetailView.h"
 #import "Announcement.h"
 
 @interface TimelineView ()
@@ -28,16 +29,12 @@
 {
     [super viewDidLoad];
     
-    self.title = @"screw you";
+    self.title = @"廠商訊息";
     
     [self fetchAnnouncement:@"http://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
     
-    // fix some shit
+    // fix some core data & magical record shit
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-
-    // init test
-    
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -76,11 +73,11 @@
     }
     else if([object isKindOfClass:[NSArray class]])
     {
+        // NSString to NSNumber hack
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         
         //[News MR_truncateAll];
-        
         
         NSArray *allOldAnnouncement = [Announcement MR_findAll];
         
@@ -99,7 +96,6 @@
                     existed = true;
                 }
             }
-            
             
             if (!existed) {
                 
@@ -219,7 +215,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
-    NSLog(@"%@", announcement.content);
+    //NSLog(@"%@", announcement.content);
 //    [self performSegueWithIdentifier:@"showNewsDetail"];
 }
 
@@ -228,6 +224,18 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"showAnnouncementDetail"]) {
+        NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+        Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
+        
+        AnnouncementDetailView * view = [segue destinationViewController];
+        view.announcement = announcement;
+//        NSLog(@"segue: %@", announcement);
+//
+//        DetailViewController *detailViewController = [segue destinationViewController];
+//        detailViewController.sighting = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+//    AnnouncementDetailView * view = [segue a]
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

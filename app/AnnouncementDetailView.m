@@ -26,7 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    if (self.announcement) {
+        self.title = [self.announcement valueForKey:@"title"];
+    }
 }
 
 - (void)didReceiveMemoryWarning

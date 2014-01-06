@@ -10,4 +10,6 @@
 
 @interface AnnouncementDetailView : UIViewController
 
+@property (strong, nonatomic) id announcement;
+
 @end

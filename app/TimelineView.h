@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@class AnnouncementDetailView;
+
 #import <CoreData/CoreData.h>
 
 @interface TimelineView : UITableViewController <NSFetchedResultsControllerDelegate> {}
 
 -(void) fetchAnnouncement: (NSString*) urlString;
 
-//@property (strong, nonatomic) AnnouncementD
+@property (strong, nonatomic) AnnouncementDetailView * announcementDetailView;
 
 @end

@@ -59,7 +59,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="b9P-pD-6tq" kind="push" identifier="showNewsDetail" id="gWu-wP-bXR"/>
+                                    <segue destination="b9P-pD-6tq" kind="push" identifier="showAnnouncementDetail" id="gWu-wP-bXR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="764" y="56"/>
         </scene>
-        <!--View Controller - NewsDetail-->
+        <!--Announcement Detail View - AnnouncementDetail-->
         <scene sceneID="3W9-a0-7EK">
             <objects>
-                <viewController title="NewsDetail" id="b9P-pD-6tq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="banana" title="AnnouncementDetail" id="b9P-pD-6tq" customClass="AnnouncementDetailView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QkG-M6-PKN"/>
                         <viewControllerLayoutGuide type="bottom" id="OnK-0K-I4f"/>
