@@ -80,10 +80,11 @@
     {
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
-
-        NSArray *allOldNews = [News MR_findAll];
         
-        [News MR_truncateAll];
+        //[News MR_truncateAll];
+        
+        
+        NSArray *allOldNews = [News MR_findAll];
         
         // add news if not already in core data
         for (NSDictionary * dict in object) {
@@ -180,8 +181,9 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
-    NSLog(@"title %@", news.title);
+    //NSLog(@"title %@", news.title);
     cell.textLabel.text = news.title;
+    cell.detailTextLabel.text = news.authorID;
 }
 
 /*
