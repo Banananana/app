@@ -83,15 +83,21 @@
 
         NSArray *allOldNews = [News MR_findAll];
         
+        [News MR_truncateAll];
+        
         // add news if not already in core data
         for (NSDictionary * dict in object) {
             
             NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
             
+            NSLog(@"%@", newID);
+            
             BOOL existed = false;
             
             for (News * news in allOldNews) {
-                    
+                
+                NSLog(@"ever got executed");
+                
                 NSNumber * oldID = news.id;
                 
                 if ([newID isEqualToNumber:oldID]) {
@@ -99,10 +105,19 @@
                 }
             }
             
+            
             if (!existed) {
+                
+                NSLog(@"%@ not existed", newID);
+                
                 News *news = [News MR_createEntity];
+                
                 news.id = newID;
+                news.title = [dict objectForKey:@"title"];
+                news.content = [dict objectForKey:@"content"];
+                news.authorID = [dict objectForKey:@"author_id"];
                 news.createdAt = [dict objectForKey:@"created_at"];
+                news.updatedAt = [dict objectForKey:@"updated_at"];
             }
         }
         
@@ -165,7 +180,8 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:[news.id stringValue]];
+    NSLog(@"title %@", news.title);
+    cell.textLabel.text = news.title;
 }
 
 /*
@@ -210,7 +226,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"fuck me");
+    News * news = [[News MR_findAll] objectAtIndex:indexPath.row];
+    NSLog(@"%@", news.content);
 //    [self performSegueWithIdentifier:@"showNewsDetail"];
 }
 
@@ -219,8 +236,6 @@
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"fuck");
-    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

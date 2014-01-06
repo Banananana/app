@@ -11,6 +11,10 @@
 @implementation News
 
 @dynamic id;
+@dynamic title;
+@dynamic content;
+@dynamic authorID;
 @dynamic createdAt;
+@dynamic updatedAt;
 
 @end

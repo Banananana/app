@@ -11,7 +11,11 @@
 
 @interface News : NSManagedObject
 
-@property (nonatomic, retain) NSString * createdAt;
 @property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * content;
+@property (nonatomic, retain) NSString * authorID;
+@property (nonatomic, retain) NSString * createdAt;
+@property (nonatomic, retain) NSString * updatedAt;
 
 @end
