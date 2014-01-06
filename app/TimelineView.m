@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 blitz. All rights reserved.
 //
 
-#import "Timeline.h"
+#import "TimelineView.h"
 #import "News.h"
 
-@interface Timeline ()
+@interface TimelineView ()
 
 @end
 
-@implementation Timeline
+@implementation TimelineView
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -91,13 +91,9 @@
             
             NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
             
-            NSLog(@"%@", newID);
-            
             BOOL existed = false;
             
             for (News * news in allOldNews) {
-                
-                NSLog(@"ever got executed");
                 
                 NSNumber * oldID = news.id;
                 
@@ -108,8 +104,6 @@
             
             
             if (!existed) {
-                
-                NSLog(@"%@ not existed", newID);
                 
                 News *news = [News MR_createEntity];
                 

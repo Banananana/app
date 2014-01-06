@@ -22,7 +22,7 @@
 		254E2D8A184B398A004838E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254E2D88184B398A004838E5 /* InfoPlist.strings */; };
 		254E2D8C184B398A004838E5 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254E2D8B184B398A004838E5 /* appTests.m */; };
 		256A72FB187208DC00CD90AE /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 256A72FA187208DC00CD90AE /* News.m */; };
-		25A9C0961869B0A3008B534A /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* Timeline.m */; };
+		25A9C0961869B0A3008B534A /* TimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* TimelineView.m */; };
 		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
 		25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* app.xcdatamodeld */; };
 		7C6FF5C536E740BD957C3043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2E11991301488A907F7C38 /* libPods.a */; };
@@ -59,8 +59,8 @@
 		254E2D8B184B398A004838E5 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
 		256A72F9187208DC00CD90AE /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		256A72FA187208DC00CD90AE /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		25A9C0941869B0A3008B534A /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
-		25A9C0951869B0A3008B534A /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		25A9C0941869B0A3008B534A /* TimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineView.h; sourceTree = "<group>"; };
+		25A9C0951869B0A3008B534A /* TimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineView.m; sourceTree = "<group>"; };
 		25A9C0971869B36D008B534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		25A9C09A1869B3D6008B534A /* app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = app.xcdatamodel; sourceTree = "<group>"; };
 		25BC78021871FDAB00FE91E8 /* MagicalRecord.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MagicalRecord.podspec; path = "app/magical-record/MagicalRecord.podspec"; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 				254E2D6A184B398A004838E5 /* AppDelegate.m */,
 				254E2D6C184B398A004838E5 /* Main_iPhone.storyboard */,
 				254E2D6F184B398A004838E5 /* Main_iPad.storyboard */,
-				25A9C0941869B0A3008B534A /* Timeline.h */,
-				25A9C0951869B0A3008B534A /* Timeline.m */,
+				25A9C0941869B0A3008B534A /* TimelineView.h */,
+				25A9C0951869B0A3008B534A /* TimelineView.m */,
 				256A72F9187208DC00CD90AE /* News.h */,
 				256A72FA187208DC00CD90AE /* News.m */,
 				254E2D78184B398A004838E5 /* Images.xcassets */,
@@ -310,7 +310,7 @@
 			files = (
 				256A72FB187208DC00CD90AE /* News.m in Sources */,
 				254E2D6B184B398A004838E5 /* AppDelegate.m in Sources */,
-				25A9C0961869B0A3008B534A /* Timeline.m in Sources */,
+				25A9C0961869B0A3008B534A /* TimelineView.m in Sources */,
 				254E2D67184B398A004838E5 /* main.m in Sources */,
 				25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */,
 			);

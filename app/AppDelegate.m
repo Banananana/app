@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "Timeline.h"
+#import "TimelineView.h"
 
 
 @implementation AppDelegate

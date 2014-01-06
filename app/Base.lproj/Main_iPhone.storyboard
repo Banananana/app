@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-260" y="56"/>
         </scene>
-        <!--Timeline - Timeline-->
+        <!--Timeline View - Timeline-->
         <scene sceneID="FCX-nT-SX6">
             <objects>
-                <tableViewController title="Timeline" id="Nzo-C9-Neb" customClass="Timeline" sceneMemberID="viewController">
+                <tableViewController title="Timeline" id="Nzo-C9-Neb" customClass="TimelineView" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CDO-5L-pgr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
