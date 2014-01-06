@@ -7,7 +7,7 @@
 //
 
 #import "AnnouncementDetailView.h"
-
+#import "Announcement.h"
 @interface AnnouncementDetailView ()
 
 @end
@@ -27,8 +27,15 @@
 {
     [super viewDidLoad];
     
-    if (self.announcement) {
-        self.title = [self.announcement valueForKey:@"title"];
+    Announcement * announcement = self.announcement;
+    
+    if (announcement) {
+        self.title = [announcement valueForKey:@"title"];
+        
+        UIWebView * webView = self.view.subviews[0];
+        [webView loadHTMLString:announcement.content baseURL:[NSURL URLWithString:@""]];
+//        NSLog(@"%@", self.view.subviews[0]);
+        
     }
 }
 
