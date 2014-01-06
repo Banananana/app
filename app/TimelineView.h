@@ -13,6 +13,6 @@
 
 -(void) fetchAnnouncement: (NSString*) urlString;
 
-
+//@property (strong, nonatomic) AnnouncementD
 
 @end

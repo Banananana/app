@@ -1,5 +1,5 @@
 //
-//  AnnoucementDetailView.h
+//  AnnouncementDetailView.h
 //  app
 //
 //  Created by blitz on 2014/1/6.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnnoucementDetailView : UIWebView
-
-@property (strong, nonatomic) id announcement;
+@interface AnnouncementDetailView : UIViewController
 
 @end
