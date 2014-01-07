@@ -1,5 +1,5 @@
 dev:
-	sudo gem install pod
+	sudo gem install cocoapods
 	pod install
 
 open:
