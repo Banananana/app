@@ -26,6 +26,7 @@
 		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
 		25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* app.xcdatamodeld */; };
 		25C61E51187AA243002574FB /* AnnouncementDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C61E50187AA243002574FB /* AnnouncementDetailView.m */; };
+		25D6D7A7188446C000BD235E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D6D7A6188446C000BD235E /* FacebookSDK.framework */; };
 		7C6FF5C536E740BD957C3043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2E11991301488A907F7C38 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		25BC78021871FDAB00FE91E8 /* MagicalRecord.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = MagicalRecord.podspec; path = "app/magical-record/MagicalRecord.podspec"; sourceTree = "<group>"; };
 		25C61E4F187AA243002574FB /* AnnouncementDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementDetailView.h; sourceTree = "<group>"; };
 		25C61E50187AA243002574FB /* AnnouncementDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementDetailView.m; sourceTree = "<group>"; };
+		25D6D7A6188446C000BD235E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		4B2E11991301488A907F7C38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0703B496CA8467394548039 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				254E2D5F184B398A004838E5 /* UIKit.framework in Frameworks */,
 				254E2D5B184B398A004838E5 /* Foundation.framework in Frameworks */,
 				7C6FF5C536E740BD957C3043 /* libPods.a in Frameworks */,
+				25D6D7A7188446C000BD235E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				25BC78021871FDAB00FE91E8 /* MagicalRecord.podspec */,
+				25D6D7A6188446C000BD235E /* FacebookSDK.framework */,
 				25A9C0971869B36D008B534A /* CoreData.framework */,
 				254E2D5A184B398A004838E5 /* Foundation.framework */,
 				254E2D5C184B398A004838E5 /* CoreGraphics.framework */,
@@ -456,6 +460,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/banacorn/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				INFOPLIST_FILE = "app/app-Info.plist";
@@ -470,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/banacorn/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app/app-Prefix.pch";
 				INFOPLIST_FILE = "app/app-Info.plist";
