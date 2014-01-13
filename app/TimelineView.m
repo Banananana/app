@@ -73,68 +73,55 @@
     }
     else if([object isKindOfClass:[NSArray class]])
     {
+        
         // NSString to NSNumber hack
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         
-//        [Announcement MR_truncateAll];
+        NSArray *allOldAnnouncement = [Announcement MR_findAll];
         
-//        NSArray *allOldAnnouncement = [Announcement MR_findAll];
-//        
-//        // add announcement if not already in core data
-//        for (NSDictionary * dict in object) {
-//            
-//            NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
-//            
-//            BOOL existed = false;
-//            
-//            for (Announcement * announcement in allOldAnnouncement) {
-//                
-//                NSNumber * oldID = announcement.id;
-//                
-//                if ([newID isEqualToNumber:oldID]) {
-//                    existed = true;
-//                }
-//            }
-//            
-//            if (!existed) {
-//                
-//                Announcement * announcement = [Announcement MR_createEntity];
-//                
-//                announcement.id = newID;
-//                announcement.title = [dict objectForKey:@"title"];
-//                announcement.content = [dict objectForKey:@"content"];
-//                announcement.authorID = [dict objectForKey:@"author_id"];
-//                announcement.createdAt = [dict objectForKey:@"created_at"];
-//                announcement.updatedAt = [dict objectForKey:@"updated_at"];
-//            }
-//        }
-//        
-//        // remove announcements if redundent in core data
-//        for (Announcement * announcement in allOldAnnouncement) {
-//            
-//            NSNumber * oldID = announcement.id;
-//            
-//            
-//            BOOL redundent = true;
-//            
-//            for (NSDictionary * dict in object) {
-//                
-//                NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
-//                
-//                if ([newID isEqualToNumber:oldID]) {
-//                    redundent = false;
-//                }
-//            }
-//            
-//            if (redundent) {
-//                [announcement MR_deleteEntity];
-//            }
-//        }
+        // add announcement if not already in core data
+        for (NSDictionary * dict in object) {
+            
+            NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
+            
+            BOOL existed = false;
+            
+            for (Announcement * announcement in allOldAnnouncement) {
+                
+                NSNumber * oldID = announcement.id;
+                
+                if ([newID isEqualToNumber:oldID]) {
+                    existed = true;
+                }
+            }
+            
+            if (!existed) {
+                [Announcement create:dict];
+            }
+        }
         
+        // remove announcements if redundent in core data
+        for (Announcement * announcement in allOldAnnouncement) {
+            
+            NSNumber * oldID = announcement.id;
+            
+            BOOL redundent = true;
+            
+            for (NSDictionary * dict in object) {
+                
+                NSNumber * newID = [f numberFromString:[dict objectForKey:@"id"]];
+                
+                if ([newID isEqualToNumber:oldID]) {
+                    redundent = false;
+                }
+            }
+            
+            if (redundent) {
+                [announcement remove];
+            }
+        }
         
-        
-
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     }
 }
@@ -214,7 +201,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
+//    Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
     //NSLog(@"%@", announcement.content);
 //    [self performSegueWithIdentifier:@"showNewsDetail"];
 }

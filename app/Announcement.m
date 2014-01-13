@@ -22,5 +22,37 @@
 @dynamic createdAt;
 @dynamic updatedAt;
 
++ (Announcement *) create: (NSDictionary *) dict
+{
+    // NSString to NSNumber hack
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    Announcement * announcement = [Announcement MR_createEntity];
+
+    announcement.id             = [f numberFromString:[dict objectForKey:@"id"]];
+    announcement.title          = [dict objectForKey:@"title"];
+    announcement.content        = [dict objectForKey:@"content"];
+    announcement.authorID       = [dict objectForKey:@"author_id"];
+    announcement.authorName     = [dict objectForKey:@"author_name"];
+    announcement.authorPosition = [dict objectForKey:@"author_position"];
+    announcement.authorCompany  = [dict objectForKey:@"author_company"];
+    announcement.time           = [dict objectForKey:@"time"];
+    announcement.createdAt      = [dict objectForKey:@"created_at"];
+    announcement.updatedAt      = [dict objectForKey:@"updated_at"];
+    
+    return announcement;
+}
+
++ (void) removeAll
+{
+    [Announcement MR_truncateAll];
+}
+
+- (void) remove
+{
+    [self MR_deleteEntity];
+}
+
 @end
 

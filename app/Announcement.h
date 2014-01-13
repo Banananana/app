@@ -23,4 +23,8 @@
 @property (nonatomic, retain) NSString * createdAt;
 @property (nonatomic, retain) NSString * updatedAt;
 
++ (Announcement *) create: (NSDictionary *) dict;
++ (void) removeAll;
+- (void) remove;
+
 @end
