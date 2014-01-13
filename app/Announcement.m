@@ -11,10 +11,16 @@
 @implementation Announcement
 
 @dynamic id;
+@dynamic time;
 @dynamic title;
 @dynamic content;
 @dynamic authorID;
+@dynamic authorName;
+@dynamic authorCompany;
+@dynamic authorPosition;
+@dynamic link;
 @dynamic createdAt;
 @dynamic updatedAt;
 
 @end
+
