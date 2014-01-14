@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AnnouncementDetailView : UIViewController {}
+- (void)makeRequestToShareLink;
 
 @property (strong, nonatomic) id announcement;
 

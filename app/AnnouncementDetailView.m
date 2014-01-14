@@ -41,10 +41,55 @@
         NSLog(@"dafaq");
         
         
-        // Close the session and remove the access token from the cache
-        // The session state handler (in the app delegate) will be called automatically
-//        [FBSession.activeSession closeAndClearTokenInformation];
         
+        // We will post on behalf of the user, these are the permissions we need:
+        NSArray *permissionsNeeded = @[@"publish_actions"];
+        
+        // Request the permissions the user currently has
+        [FBRequestConnection startWithGraphPath:@"/me/permissions"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  if (!error){
+                                      NSDictionary *currentPermissions= [(NSArray *)[result data] objectAtIndex:0];
+                                      NSMutableArray *requestPermissions = [[NSMutableArray alloc] initWithArray:@[]];
+                                      
+                                      // Check if all the permissions we need are present in the user's current permissions
+                                      // If they are not present add them to the permissions to be requested
+                                      for (NSString *permission in permissionsNeeded){
+                                          if (![currentPermissions objectForKey:permission]){
+                                              [requestPermissions addObject:permission];
+                                          }
+                                      }
+                                      
+                                      // If we have permissions to request
+                                      if ([requestPermissions count] > 0){
+                                          // Ask for the missing permissions
+                                          [FBSession.activeSession requestNewPublishPermissions:requestPermissions
+                                                                                defaultAudience:FBSessionDefaultAudienceFriends
+                                                                              completionHandler:^(FBSession *session, NSError *error) {
+                                                                                  if (!error) {
+                                                                                      // Permission granted, we can request the user information
+                                                                                      NSLog(@"permission granted");
+                                                                                      [self makeRequestToShareLink];
+                                                                                  } else {
+                                                                                      // An error occurred, handle the error
+                                                                                      // See our Handling Errors guide: https://developers.facebook.com/docs/ios/errors/
+                                                                                      NSLog([NSString stringWithFormat:@"%@", error.description]);
+                                                                                  }
+                                                                              }];
+                                      } else {
+                                          // Permissions are present, we can request the user information
+                                          [self makeRequestToShareLink];
+                                          
+                                          NSLog(@"permission granted");
+                                      }
+                                      
+                                  } else {
+                                      // There was an error requesting the permission information
+                                      // See our Handling Errors guide: https://developers.facebook.com/docs/ios/errors/
+                                      NSLog([NSString stringWithFormat:@"%@", error.description]);
+                                  }
+                              }];
+
         // If the session state is not any of the two "open" states when the button is clicked
     } else {
         // Open a session showing the user the login UI
@@ -61,6 +106,42 @@
          }];
     }
 }
+
+
+- (void)makeRequestToShareLink {
+    
+    // NOTE: pre-filling fields associated with Facebook posts,
+    // unless the user manually generated the content earlier in the workflow of your app,
+    // can be against the Platform policies: https://developers.facebook.com/policy
+    Announcement * announcement = self.announcement;
+
+//    NSLog(@"%@", announcement.title);
+    // Put together the dialog parameters
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"Open House 2014", @"name",
+                                   announcement.title, @"caption",
+                                   announcement.content, @"description",
+                                   [@"http://openhouse.nctu.edu.tw//2014" stringByAppendingString:announcement.feedLink], @"link",
+                                   @"https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-prn1/t1/1235961_632780743420592_1793562406_n.jpg", @"picture",
+                                   nil];
+    
+    // Make the request
+    [FBRequestConnection startWithGraphPath:@"/me/feed"
+                                 parameters:params
+                                 HTTPMethod:@"POST"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error) {
+                                  // Link posted successfully to Facebook
+                                  NSLog([NSString stringWithFormat:@"result: %@", result]);
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  // See: https://developers.facebook.com/docs/ios/errors
+                                  NSLog([NSString stringWithFormat:@"%@", error.description]);
+                              }
+                          }];
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
