@@ -78,6 +78,7 @@
     else if([object isKindOfClass:[NSArray class]])
     {
         
+        [Announcement removeAll];
         // NSString to NSNumber hack
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];

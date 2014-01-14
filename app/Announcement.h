@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * authorName;
 @property (nonatomic, retain) NSString * authorPosition;
 @property (nonatomic, retain) NSString * authorCompany;
+@property (nonatomic, retain) NSNumber * authorCompanyID;
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * createdAt;
 @property (nonatomic, retain) NSString * updatedAt;

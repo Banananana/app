@@ -37,6 +37,14 @@
     announcement.authorName     = [dict objectForKey:@"author_name"];
     announcement.authorPosition = [dict objectForKey:@"author_position"];
     announcement.authorCompany  = [dict objectForKey:@"author_company"];
+    
+    // fuck php, fuck you all, dynamic typed junk, and all of these predated static type system = =
+    if ([[dict objectForKey:@"author_company_id"] isKindOfClass:[NSString class]]) {
+        announcement.authorCompanyID = [f numberFromString:[dict objectForKey:@"author_company_id"]];
+    } else {
+        announcement.authorCompanyID = [dict objectForKey:@"author_company_id"];
+    }
+    
     announcement.time           = [dict objectForKey:@"time"];
     announcement.createdAt      = [dict objectForKey:@"created_at"];
     announcement.updatedAt      = [dict objectForKey:@"updated_at"];
