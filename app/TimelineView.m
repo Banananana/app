@@ -9,6 +9,8 @@
 #import "TimelineView.h"
 #import "AnnouncementDetailView.h"
 #import "Announcement.h"
+#import <FacebookSDK/FacebookSDK.h>
+
 
 @interface TimelineView ()
 
@@ -41,6 +43,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
