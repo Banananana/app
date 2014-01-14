@@ -114,13 +114,6 @@
                     <view key="view" contentMode="scaleToFill" id="VpE-Xt-JBB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woe-uR-Epi">
-                                <rect key="frame" x="90" y="211" width="140" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="login.png"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="設置" image="gear_24.png" id="7yw-jB-8x4"/>
@@ -149,7 +142,6 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="gear_24.png" width="24" height="24"/>
-        <image name="login.png" width="337" height="94"/>
         <image name="speaker_24.png" width="26" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

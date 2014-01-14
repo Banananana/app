@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "TimelineView.h"
-
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation AppDelegate
 
@@ -49,6 +49,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// facebook login response handler
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    NSLog(@"fuck");
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
 
 
 
