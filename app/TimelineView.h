@@ -14,7 +14,10 @@
 
 @interface TimelineView : UITableViewController <NSFetchedResultsControllerDelegate> {}
 
--(void) fetchAnnouncement: (NSString*) urlString;
+
++ (NSDictionary *) companyTable;
+
+- (void) fetchAnnouncement: (NSString*) urlString;
 
 @property (strong, nonatomic) AnnouncementDetailView * announcementDetailView;
 

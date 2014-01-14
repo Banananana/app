@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnnouncementDetailView : UIViewController
+@interface AnnouncementDetailView : UIViewController {}
 
 @property (strong, nonatomic) id announcement;
 

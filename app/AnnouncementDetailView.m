@@ -11,10 +11,6 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface AnnouncementDetailView ()
-
-@end
-
 @implementation AnnouncementDetailView
 - (IBAction)shareToFB:(id)sender {
     
