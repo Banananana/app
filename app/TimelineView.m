@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"廠商訊息";
+    self.title = @"最新消息";
     
     [self fetchAnnouncement:@"http://openhouse.nctu.edu.tw/2014/index.php?r=announce%2Ffeed"];
     
@@ -162,8 +162,7 @@
     Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
     cell.textLabel.text = announcement.title;
     cell.detailTextLabel.text = [TimelineView companyTable][announcement.authorCompanyID];
-    
-//    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:[announcement.time doubleValue]];
+    //    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:[announcement.time doubleValue]];
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 //    [formatter setDateFormat:@"dd' in the month of 'MMMM' in the year of 'yyyy"];
 //    NSString *s = [formatter stringFromDate:[NSDate date]];
@@ -228,6 +227,7 @@
         
         AnnouncementDetailView * view = [segue destinationViewController];
         view.announcement = announcement;
+        view.title = [TimelineView companyTable][announcement.authorCompanyID];
 //        NSLog(@"segue: %@", announcement);
 //
 //        DetailViewController *detailViewController = [segue destinationViewController];

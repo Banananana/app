@@ -75,14 +75,20 @@
 {
     [super viewDidLoad];
     
+    
     Announcement * announcement = self.announcement;
     
+    
     if (announcement) {
-        self.title = [announcement valueForKey:@"title"];
-        
+//        self.title = [announcement valueForKey:@"title"];
+
+        // web view
         UIWebView * webView = self.view.subviews[0];
         [webView loadHTMLString:announcement.content baseURL:[NSURL URLWithString:@""]];
-//        NSLog(@"%@", self.view.subviews[0]);
+
+        // title label view
+        UILabel * titleView = [self.view.subviews[1] subviews][0];
+        titleView.text = announcement.title;
         
     }
 }
