@@ -30,6 +30,9 @@
 		25744EFE18853D68002D9E1D /* Open House.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744EFD18853D68002D9E1D /* Open House.png */; };
 		25744F0018853DE8002D9E1D /* 華碩電腦.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744EFF18853DE8002D9E1D /* 華碩電腦.png */; };
 		25744F0218853E1A002D9E1D /* 美商謀智.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744F0118853E1A002D9E1D /* 美商謀智.png */; };
+		25744F0418853FED002D9E1D /* KKBOX.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744F0318853FED002D9E1D /* KKBOX.png */; };
+		25744F061885439E002D9E1D /* 東元電機.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744F051885439E002D9E1D /* 東元電機.png */; };
+		25744F081885446C002D9E1D /* cacaFly.png in Resources */ = {isa = PBXBuildFile; fileRef = 25744F071885446C002D9E1D /* cacaFly.png */; };
 		25A9C0961869B0A3008B534A /* TimelineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0951869B0A3008B534A /* TimelineView.m */; };
 		25A9C0981869B36D008B534A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A9C0971869B36D008B534A /* CoreData.framework */; };
 		25A9C09B1869B3D6008B534A /* app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25A9C0991869B3D6008B534A /* app.xcdatamodeld */; };
@@ -78,6 +81,9 @@
 		25744EFD18853D68002D9E1D /* Open House.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Open House.png"; sourceTree = "<group>"; };
 		25744EFF18853DE8002D9E1D /* 華碩電腦.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "華碩電腦.png"; sourceTree = "<group>"; };
 		25744F0118853E1A002D9E1D /* 美商謀智.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "美商謀智.png"; sourceTree = "<group>"; };
+		25744F0318853FED002D9E1D /* KKBOX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KKBOX.png; sourceTree = "<group>"; };
+		25744F051885439E002D9E1D /* 東元電機.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "東元電機.png"; sourceTree = "<group>"; };
+		25744F071885446C002D9E1D /* cacaFly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cacaFly.png; sourceTree = "<group>"; };
 		25A9C0941869B0A3008B534A /* TimelineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineView.h; sourceTree = "<group>"; };
 		25A9C0951869B0A3008B534A /* TimelineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineView.m; sourceTree = "<group>"; };
 		25A9C0971869B36D008B534A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -177,6 +183,9 @@
 		254E2D61184B398A004838E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25744F071885446C002D9E1D /* cacaFly.png */,
+				25744F051885439E002D9E1D /* 東元電機.png */,
+				25744F0318853FED002D9E1D /* KKBOX.png */,
 				25744F0118853E1A002D9E1D /* 美商謀智.png */,
 				25744EFF18853DE8002D9E1D /* 華碩電腦.png */,
 				25744EFD18853D68002D9E1D /* Open House.png */,
@@ -291,9 +300,12 @@
 				25744EFE18853D68002D9E1D /* Open House.png in Resources */,
 				257401F018850C5600AD620F /* gear_24.png in Resources */,
 				257401F218850D2400AD620F /* speaker_24.png in Resources */,
+				25744F0418853FED002D9E1D /* KKBOX.png in Resources */,
 				254E2D71184B398A004838E5 /* Main_iPad.storyboard in Resources */,
+				25744F081885446C002D9E1D /* cacaFly.png in Resources */,
 				25744F0018853DE8002D9E1D /* 華碩電腦.png in Resources */,
 				254E2D79184B398A004838E5 /* Images.xcassets in Resources */,
+				25744F061885439E002D9E1D /* 東元電機.png in Resources */,
 				25744F0218853E1A002D9E1D /* 美商謀智.png in Resources */,
 				254E2D6E184B398A004838E5 /* Main_iPhone.storyboard in Resources */,
 				254E2D65184B398A004838E5 /* InfoPlist.strings in Resources */,

@@ -48,8 +48,8 @@
     announcement.time           = [dict objectForKey:@"time"];
     announcement.link           = [dict objectForKey:@"link"];
     announcement.feedLink       = [dict objectForKey:@"feed_link"];
-    announcement.createdAt      = [dict objectForKey:@"created_at"];
-    announcement.updatedAt      = [dict objectForKey:@"updated_at"];
+    announcement.createdAt      = [dict objectForKey:@"create_time"];
+    announcement.updatedAt      = [dict objectForKey:@"update_time"];
     
     return announcement;
 }

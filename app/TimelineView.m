@@ -164,7 +164,7 @@
     cell.detailTextLabel.text = [TimelineView companyTable][announcement.authorCompanyID];
 //    NSLog(@"%@", [TimelineView companyTable][announcement.authorCompanyID]);
 //    NSLog(@"%@", [announcement.authorCompany stringByAppendingString:@".png"]);
-    [cell.imageView initWithImage:[UIImage imageNamed:[announcement.authorCompany stringByAppendingString:@".png"]]];
+    [cell.imageView initWithImage:[UIImage imageNamed:[[TimelineView companyTable][announcement.authorCompanyID] stringByAppendingString:@".png"]]];
 
     //    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:[announcement.time doubleValue]];
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

@@ -171,6 +171,15 @@
         UILabel * titleView = [self.view.subviews[1] subviews][0];
         titleView.text = announcement.title;
         
+        // time label view
+        UILabel * timeView = [self.view.subviews[1] subviews][5];
+        timeView.text = announcement.createdAt;
+        NSLog(@"%@", announcement.createdAt);
+        
+        // announcer label view
+        UILabel * announcerView = [self.view.subviews[1] subviews][4];
+        announcerView.text = [[announcement.authorPosition stringByAppendingString:@" "] stringByAppendingString:announcement.authorName];
+        
     }
 }
 
