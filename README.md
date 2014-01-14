@@ -1,9 +1,4 @@
-app
-===
-bannn
+# Development
 
-asefrwe
-
-
-
-ios app for open house
+    make install
+    make open
