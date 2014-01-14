@@ -162,6 +162,10 @@
     Announcement * announcement = [[Announcement MR_findAll] objectAtIndex:indexPath.row];
     cell.textLabel.text = announcement.title;
     cell.detailTextLabel.text = [TimelineView companyTable][announcement.authorCompanyID];
+//    NSLog(@"%@", [TimelineView companyTable][announcement.authorCompanyID]);
+//    NSLog(@"%@", [announcement.authorCompany stringByAppendingString:@".png"]);
+    [cell.imageView initWithImage:[UIImage imageNamed:[announcement.authorCompany stringByAppendingString:@".png"]]];
+
     //    NSDate * date = [[NSDate alloc] initWithTimeIntervalSince1970:[announcement.time doubleValue]];
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 //    [formatter setDateFormat:@"dd' in the month of 'MMMM' in the year of 'yyyy"];
